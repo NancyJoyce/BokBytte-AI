@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, Dimensions, ActivityIndicator } from 're
 import { useUser } from '@clerk/clerk-expo';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../config/FirebaseConfig';
-import Swiper from 'react-native-deck-swiper';
+// import Swiper from 'react-native-deck-swiper';
 import Colors from '../constants/Colors';
 import { findSmartMatches } from '../utils/aiMatcher';
 import { useRouter } from 'expo-router'; // ✅ Use expo-router
@@ -83,56 +83,56 @@ export default function MatchSwipe() {
     }
   };
 
-  return (
-    <View style={styles.container}>
-      <Swiper
-        cards={swipeCards}
-        renderCard={renderCard}
-        stackSize={3}
-        cardIndex={0}
-        backgroundColor="#f0f0f0"
-        onSwipedRight={handleSwipeRight}
-        onSwipedLeft={(cardIndex) => console.log('Skipped:', swipeCards[cardIndex]?.title)}
-        overlayLabels={{
-          left: {
-            title: 'SKIP',
-            style: {
-              label: {
-                backgroundColor: 'red',
-                color: 'white',
-                fontSize: 24,
-              },
-              wrapper: {
-                flexDirection: 'column',
-                alignItems: 'flex-end',
-                justifyContent: 'flex-start',
-                marginTop: 20,
-                marginLeft: -20,
-              },
-            },
-          },
-          right: {
-            title: 'MATCH',
-            style: {
-              label: {
-                backgroundColor: 'green',
-                color: 'white',
-                fontSize: 24,
-              },
-              wrapper: {
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                justifyContent: 'flex-start',
-                marginTop: 20,
-                marginLeft: 20,
-              },
-            },
-          },
-        }}
-        animateOverlayLabelsOpacity
-      />
-    </View>
-  );
+  // return (
+  //   <View style={styles.container}>
+  //     <Swiper
+  //       cards={swipeCards}
+  //       renderCard={renderCard}
+  //       stackSize={3}
+  //       cardIndex={0}
+  //       backgroundColor="#f0f0f0"
+  //       onSwipedRight={handleSwipeRight}
+  //       onSwipedLeft={(cardIndex) => console.log('Skipped:', swipeCards[cardIndex]?.title)}
+  //       overlayLabels={{
+  //         left: {
+  //           title: 'SKIP',
+  //           style: {
+  //             label: {
+  //               backgroundColor: 'red',
+  //               color: 'white',
+  //               fontSize: 24,
+  //             },
+  //             wrapper: {
+  //               flexDirection: 'column',
+  //               alignItems: 'flex-end',
+  //               justifyContent: 'flex-start',
+  //               marginTop: 20,
+  //               marginLeft: -20,
+  //             },
+  //           },
+  //         },
+  //         right: {
+  //           title: 'MATCH',
+  //           style: {
+  //             label: {
+  //               backgroundColor: 'green',
+  //               color: 'white',
+  //               fontSize: 24,
+  //             },
+  //             wrapper: {
+  //               flexDirection: 'column',
+  //               alignItems: 'flex-start',
+  //               justifyContent: 'flex-start',
+  //               marginTop: 20,
+  //               marginLeft: 20,
+  //             },
+  //           },
+  //         },
+  //       }}
+  //       animateOverlayLabelsOpacity
+  //     />
+  //   </View>
+  // );
 }
 
 const styles = StyleSheet.create({
